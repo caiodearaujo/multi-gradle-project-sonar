@@ -1,0 +1,10 @@
+gradle.allprojects {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+}
+
+rootProject.name = 'multi-gradle-project-sonar'
+include 'common-utils'
+include 'api-spring'

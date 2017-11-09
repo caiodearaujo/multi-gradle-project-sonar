@@ -1,0 +1,15 @@
+group 'br.com.caiodearaujo'
+version '1.0.0'
+
+apply from: "${rootProject.projectDir}/gradle/jacoco.gradle"
+apply from: "${rootProject.projectDir}/gradle/sonarqube-multiproject.gradle"
+
+evaluationDependsOn('common-utils')
+evaluationDependsOn('api-spring')
+
+dependencies {
+    compile project('common-utils')
+    compile project('api-spring')
+}
+
+defaultTasks 'clean', 'sonarqube'
